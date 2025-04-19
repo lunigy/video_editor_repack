@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  video_editor:
+  video_editor_repack:
     path: ../
 
   fraction: ^5.0.4
@@ -29,3 +29,8 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^5.0.0
+
+# Override the ffmpeg_kit_flutter_min dependency with a local fork for better compatibility
+dependency_overrides:
+  ffmpeg_kit_flutter_min:
+    path: /Users/billakkas/Documents/Projects/forks/ffmpeg_kit_flutter_min_fork

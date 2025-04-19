@@ -5,7 +5,7 @@ import 'package:video_editor_example/export_service.dart';
 import 'package:video_editor_example/widgets/export_result.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:video_editor/video_editor.dart';
+import 'package:video_editor_repack/video_editor.dart';
 
 void main() => runApp(
       MaterialApp(

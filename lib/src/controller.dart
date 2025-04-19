@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:video_editor/src/utils/helpers.dart';
-import 'package:video_editor/src/utils/thumbnails.dart';
-import 'package:video_editor/src/models/cover_data.dart';
-import 'package:video_editor/video_editor.dart';
+import 'package:video_editor_repack/src/utils/helpers.dart';
+import 'package:video_editor_repack/src/utils/thumbnails.dart';
+import 'package:video_editor_repack/src/models/cover_data.dart';
+import 'package:video_editor_repack/video_editor.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoMinDurationError extends Error {

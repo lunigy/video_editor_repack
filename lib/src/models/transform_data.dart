@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:video_editor/src/controller.dart';
-import 'package:video_editor/src/utils/helpers.dart';
+import 'package:video_editor_repack/src/controller.dart';
+import 'package:video_editor_repack/src/utils/helpers.dart';
 
 class TransformData {
   const TransformData({

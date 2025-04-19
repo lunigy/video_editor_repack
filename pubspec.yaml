@@ -1,10 +1,10 @@
-name: video_editor
-version: 3.0.0
+name: video_editor_repack
+version: 3.0.1
 description: |
  A flutter package for editing video with fully customizable UI.
  Supports crop, trim, rotation and cover selection.
  Provides commands to run in order to export the video or cover.
-repository: https://github.com/LeGoffMael/video_editor
+repository: https://github.com/lunigy/video_editor_repack
 
 environment:
   flutter: ">=3.0.0"
@@ -30,3 +30,10 @@ dev_dependencies:
 screenshots:
   - description: 'Video editor demo'
     path: assets/demo_thumb.webp
+
+# Override the ffmpeg_kit_flutter_min dependency with a GitHub fork for better compatibility
+dependency_overrides:
+  ffmpeg_kit_flutter_min:
+    git:
+      url: https://github.com/lunigy/ffmpeg_kit_flutter_min_fork.git
+      ref: main

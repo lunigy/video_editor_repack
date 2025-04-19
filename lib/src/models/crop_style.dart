@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_editor/src/utils/helpers.dart';
+import 'package:video_editor_repack/src/utils/helpers.dart';
 
 class CropGridStyle {
   ///Style for [CropGridViewer]. It's use on VideoEditorController

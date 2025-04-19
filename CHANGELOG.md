@@ -1,3 +1,12 @@
+## 3.0.1
+
+- Updated package name from `video_editor` to `video_editor_repack`
+- Fixed internal package references throughout the codebase
+- Added compatibility with newer Flutter versions
+- Replaced `video_thumbnail` dependency with `ffmpeg_kit_flutter_min` for thumbnail generation
+- Fixed unterminated string literals in debug print statements
+- Improved error handling in FFmpeg operations
+
 ## 3.0.0
 
 > **Note**

@@ -5,9 +5,9 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
-import 'package:video_editor/src/controller.dart';
-import 'package:video_editor/src/models/file_format.dart';
-import 'package:video_thumbnail/video_thumbnail.dart';
+import 'package:video_editor_repack/src/controller.dart';
+import 'package:video_editor_repack/src/models/file_format.dart';
+import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
 
 class FFmpegVideoEditorExecute {
   const FFmpegVideoEditorExecute({
@@ -226,14 +226,25 @@ class CoverFFmpegVideoEditorConfig extends FFmpegVideoEditorConfig {
   /// Generate this selected cover image as a JPEG [File]
   ///
   /// If this controller's [selectedCoverVal] is `null`, then it return the first frame of this video.
-  Future<String?> _generateCoverFile() async => VideoThumbnail.thumbnailFile(
-        imageFormat: ImageFormat.JPEG,
-        thumbnailPath: (await getTemporaryDirectory()).path,
-        video: controller.file.path,
-        timeMs: controller.selectedCoverVal?.timeMs ??
-            controller.startTrim.inMilliseconds,
-        quality: quality,
-      );
+  Future<String?> _generateCoverFile() async {
+    final tempDir = await getTemporaryDirectory();
+    final outputPath = '${tempDir.path}/thumbnail_${DateTime.now().millisecondsSinceEpoch}.jpg';
+    final timeMs = controller.selectedCoverVal?.timeMs ?? controller.startTrim.inMilliseconds;
+    final timeInSeconds = timeMs / 1000.0;
+    
+    // Generate thumbnail using FFmpeg
+    final command = '-y -i "${controller.file.path}" -ss $timeInSeconds -vframes 1 -q:v ${quality} "$outputPath"';
+    
+    try {
+      await FFmpegKit.execute(command);
+      if (File(outputPath).existsSync()) {
+        return outputPath;
+      }
+    } catch (e) {
+      debugPrint('Error generating thumbnail with FFmpeg: $e');
+    }
+    return null;
+  }
 
   /// Returns a [FFmpegVideoEditorExecute] command to be executed with FFmpeg to export
   /// the cover image applying the editing parameters.

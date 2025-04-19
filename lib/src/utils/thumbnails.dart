@@ -4,8 +4,8 @@ import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
 import 'package:ffmpeg_kit_flutter_min/return_code.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:video_editor/src/controller.dart';
-import 'package:video_editor/src/models/cover_data.dart';
+import 'package:video_editor_repack/src/controller.dart';
+import 'package:video_editor_repack/src/models/cover_data.dart';
 import 'package:path/path.dart' as path; // Import path package with prefix
 
 // Helper function to generate a single thumbnail using FFmpeg
@@ -94,8 +94,7 @@ Stream<List<Uint8List>> generateTrimThumbnails(
          yield List.from(byteList);
       }
     } catch (e, s) {
-      debugPrint("Error in generateTrimThumbnails loop: $e
-$s");
+      debugPrint("Error in generateTrimThumbnails loop: $e\n$s");
       // Handle error, maybe yield current list or rethrow
        yield List.from(byteList);
     }
@@ -140,8 +139,7 @@ Stream<List<CoverData>> generateCoverThumbnails(
          yield List.from(byteList);
       }
     } catch (e, s) {
-       debugPrint("Error in generateCoverThumbnails loop: $e
-$s");
+       debugPrint("Error in generateCoverThumbnails loop: $e\n$s");
       yield List.from(byteList);
     }
   }

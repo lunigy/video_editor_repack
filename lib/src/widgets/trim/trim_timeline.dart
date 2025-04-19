@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:video_editor/src/controller.dart';
+import 'package:video_editor_repack/src/controller.dart';
 
 class TrimTimeline extends StatelessWidget {
   /// Show the timeline corresponding to the [TrimSlider]
