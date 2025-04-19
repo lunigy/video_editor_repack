@@ -1,36 +1,36 @@
-# Flutter video editor
+# Flutter video editor repack
 
-[![Pub](https://img.shields.io/pub/v/video_editor.svg)](https://pub.dev/packages/video_editor)
-[![GitHub stars](https://img.shields.io/github/stars/LeGoffMael/video_editor?style=social)](https://github.com/LeGoffMael/video_editor/stargazers)
+[![Pub](https://img.shields.io/pub/v/video_editor_repack.svg)](https://pub.dev/packages/video_editor_repack)
+[![GitHub stars](https://img.shields.io/github/stars/lunigy/video_editor_repack?style=social)](https://github.com/lunigy/video_editor_repack/stargazers)
 
 A video editor that allows to edit (trim, crop, rotate and scale) and choose a cover with a very flexible UI design.
 
 The library provides some tools to execute the exportation but does not handle it.
 
-This library is written in Dart only but uses external packages such as [video_thumbnail](https://pub.dev/packages/video_thumbnail), which makes it available only on iOS and Android plaforms for now ([web support is currently in progress](https://github.com/LeGoffMael/video_editor/pull/147)).
+This library is written in Dart only and uses [ffmpeg_kit_flutter_min](https://github.com/lunigy/ffmpeg_kit_flutter_min_fork) for thumbnail generation and video processing, which makes it available on iOS, Android, and macOS platforms.
 
 > **Note**
-> If you use a version between (1.2.3 and 2.4.0) your project might be subject to a GPL license.
+> This is a repackaged version of the original [video_editor](https://pub.dev/packages/video_editor) package with updated dependencies and Flutter 3.0+ compatibility.
 
-|             | Android | iOS   |
-|-------------|---------|-------|
-| **Support** | SDK 16+ | 11.0+ |
+|             | Android | iOS   | macOS |
+|-------------|---------|-------|-------|
+| **Support** | SDK 16+ | 11.0+ | 10.15+ |
 
 ## 📖 Installation
 
 Following steps will help you add this library as a dependency in your flutter project.
 
-- Run `flutter pub add video_editor`, or add video_editor to `pubspec.yaml` file manually.
+- Run `flutter pub add video_editor_repack`, or add video_editor_repack to `pubspec.yaml` file manually.
 
 ```yaml
 dependencies:
-  video_editor: ^2.4.0
+  video_editor_repack: ^3.0.1
 ```
 
 - Import the package in your code:
 
 ```dart
-import 'package:video_editor/video_editor.dart';
+import 'package:video_editor_repack/video_editor_repack.dart';
 ```
 
 ## 📸 Screenshots
@@ -100,7 +100,7 @@ Future<void> exportMirroredVideo() async {
 }
 ```
 
-For more details check out the [example](https://github.com/LeGoffMael/video_editor/tree/master/example).
+For more details check out the [example](https://github.com/lunigy/video_editor_repack/tree/master/example).
 
 ### VideoEditorController
 
@@ -131,8 +131,8 @@ For more details check out the [example](https://github.com/LeGoffMael/video_edi
 | int rotation                     | The rotation angle set `0`, `90`, `180` and `270` |
 | int cacheRotation                | The sum of all the rotation applied in the editor |
 | CoverData? selectedCoverVal      | The selected cover thumbnail that will be used to export the final cover |
-| int coverThumbnailsQuality = 10  | The `coverThumbnailsQuality` param specifies the quality of the generated cover thumbnails, from 0 to 100 ([more info](https://pub.dev/packages/video_thumbnail)) |
-| int trimThumbnailsQuality = 10   | The `trimThumbnailsQuality` param specifies the quality of the generated trim slider thumbnails, from 0 to 100 ([more info](https://pub.dev/packages/video_thumbnail)) |
+| int coverThumbnailsQuality = 10  | The `coverThumbnailsQuality` param specifies the quality of the generated cover thumbnails, from 0 to 100 |
+| int trimThumbnailsQuality = 10   | The `trimThumbnailsQuality` param specifies the quality of the generated trim slider thumbnails, from 0 to 100 |
 
 
 ### Widgets
