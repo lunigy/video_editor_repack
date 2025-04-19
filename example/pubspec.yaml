@@ -19,7 +19,7 @@ dependencies:
   image_picker: ^1.1.2
   path: ^1.8.2
   video_player: ^2.6.1
-  ffmpeg_kit_flutter_min: ^6.0.3
+  ffmpeg_kit_flutter_minimal: ^6.0.4
 
 flutter:
   uses-material-design: true
@@ -30,7 +30,4 @@ dev_dependencies:
 
   flutter_lints: ^5.0.0
 
-# Override the ffmpeg_kit_flutter_min dependency with a local fork for better compatibility
-dependency_overrides:
-  ffmpeg_kit_flutter_min:
-    path: /Users/billakkas/Documents/Projects/forks/ffmpeg_kit_flutter_min_fork
+# Using the published ffmpeg_kit_flutter_minimal package from pub.dev

@@ -14,7 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  ffmpeg_kit_flutter_min: ^6.0.3 # Added for thumbnail generation
+  ffmpeg_kit_flutter_minimal: ^6.0.4 # Updated to published package
   path: ^1.8.0 # update to `1.8.1` causes #79
   path_provider: ^2.0.12 # Needed for temp directory
   transparent_image: ^2.0.1 # show fade-in placeholder in thumbnails generation
@@ -31,9 +31,4 @@ screenshots:
   - description: 'Video editor demo'
     path: assets/demo_thumb.webp
 
-# Override the ffmpeg_kit_flutter_min dependency with a GitHub fork for better compatibility
-dependency_overrides:
-  ffmpeg_kit_flutter_min:
-    git:
-      url: https://github.com/lunigy/ffmpeg_kit_flutter_min_fork.git
-      ref: main
+# No dependency overrides needed as we're using the published package

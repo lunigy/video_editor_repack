@@ -1,11 +1,11 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit_config.dart';
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_session.dart';
-import 'package:ffmpeg_kit_flutter_min/return_code.dart';
-import 'package:ffmpeg_kit_flutter_min/statistics.dart';
+import 'package:ffmpeg_kit_flutter_minimal/ffmpeg_kit.dart';
+import 'package:ffmpeg_kit_flutter_minimal/ffmpeg_kit_config.dart';
+import 'package:ffmpeg_kit_flutter_minimal/ffmpeg_session.dart';
+import 'package:ffmpeg_kit_flutter_minimal/return_code.dart';
+import 'package:ffmpeg_kit_flutter_minimal/statistics.dart';
 import 'package:video_editor_repack/video_editor.dart';
 
 class ExportService {

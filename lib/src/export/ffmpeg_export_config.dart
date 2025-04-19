@@ -7,7 +7,7 @@ import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:video_editor_repack/src/controller.dart';
 import 'package:video_editor_repack/src/models/file_format.dart';
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
+import 'package:ffmpeg_kit_flutter_minimal/ffmpeg_kit.dart';
 
 class FFmpegVideoEditorExecute {
   const FFmpegVideoEditorExecute({
