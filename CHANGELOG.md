@@ -1,3 +1,9 @@
+## 3.0.2
+
+- Updated dependency from GitHub-hosted `ffmpeg_kit_flutter_min` fork to pub.dev-published `ffmpeg_kit_flutter_minimal`
+- Simplified integration for users by removing the need for dependency overrides
+- Updated import paths throughout the codebase to use the new package
+
 ## 3.0.1
 
 - Updated package name from `video_editor` to `video_editor_repack`
