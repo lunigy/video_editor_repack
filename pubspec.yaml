@@ -8,23 +8,24 @@ repository: https://github.com/LeGoffMael/video_editor
 
 environment:
   flutter: ">=3.0.0"
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
+  ffmpeg_kit_flutter_min: ^6.0.3 # Added for thumbnail generation
   path: ^1.8.0 # update to `1.8.1` causes #79
-  path_provider: ^2.0.12
+  path_provider: ^2.0.12 # Needed for temp directory
   transparent_image: ^2.0.1 # show fade-in placeholder in thumbnails generation
   video_player: ^2.6.1
-  video_thumbnail: ^0.5.3
+  # video_thumbnail: ^0.5.3 # Removed
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.1
+  flutter_lints: ^5.0.0
 
 screenshots:
   - description: 'Video editor demo'
